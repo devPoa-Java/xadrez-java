@@ -4,15 +4,15 @@ import boardgame.Board;
 import boardgame.Piece;
 
 public class ChessPiece extends Piece {
-	private Color cor;
+	private Color color;
 
-	public ChessPiece(Board board, Color cor) {
+	public ChessPiece(Board board, Color color) {
 		super(board);
-		this.cor = cor;
+		this.color = color;
 	}
 
-	public Color getCor() {
-		return cor;
+	public Color getColor() {
+		return color;
 	}
 
 }
