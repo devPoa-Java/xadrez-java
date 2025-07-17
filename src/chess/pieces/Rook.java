@@ -7,8 +7,8 @@ import chess.Color;
 
 public class Rook extends ChessPiece {
 
-	public Rook(Board board, Color cor) {
-		super(board, cor);
+	public Rook(Board board, Color color) {
+		super(board, color);
 	}
 
 	@Override
@@ -49,13 +49,14 @@ public class Rook extends ChessPiece {
 			mat[p.getRow()][p.getColumn()] = true;
 		}
 		// below
-		p.setValues(position.getRow() +1, position.getColumn());
+		p.setValues(position.getRow() + 1, position.getColumn());
 		while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
-			p.setRow(p.getRow() +1);
+			p.setRow(p.getRow() + 1);
 		}
-
+		if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
+			mat[p.getRow()][p.getColumn()] = true;
+		}
 		return mat;
 	}
-
 }
